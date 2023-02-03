@@ -1,0 +1,28 @@
+<mat-form-field>
+  <mat-select
+    placeholder="Toppings"
+    [formControl]="toppings"
+    [(value)]="selectedToppings"
+    multiple
+  >
+    <mat-option *ngFor="let topping of toppingList" [value]="topping"
+      >{{topping.name}}</mat-option
+    >
+  </mat-select>
+</mat-form-field>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Path</th>
+    <th>Date</th>
+  </tr>
+  <tr *ngFor="let row of selectedToppings">
+    <td>{{row.name}}</td>
+    <td>{{row.path}}</td>
+    <td>{{row.date}}</td>
+  </tr>
+</table>
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
